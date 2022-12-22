@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  client:
+    stdin_open: true
+    image: sidecar-frontend:dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sidecar-frontend
+    ports:
+      -  "8001:8000"
+    volumes:
+      -  "/app/node_modules"
+      -  "./:/app"
